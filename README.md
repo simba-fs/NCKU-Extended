@@ -12,4 +12,4 @@
 
 ## 作者
 物理系 114 陳宏彰
-mail: C24106082 @ㄒ gs.ncku.edu.tw
+mail: simba.fs+extension @ㄒ gmail.com
