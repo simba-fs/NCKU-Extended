@@ -1,4 +1,8 @@
-# NCKU-course-extension
+<p align="center">
+  <img src="./icon/icon-192.png"/>
+ </p>
+
+# NCKU-Course-Extension
 成大選課系統瀏覽器擴充套件  
 
 擴充成大選課系統的功能  
