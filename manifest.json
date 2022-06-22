@@ -1,0 +1,16 @@
+{
+	"manifest_version": 2,
+	"name": "NCKU Course Extended",
+	"version": "1.0",
+	"description": "Improving the experience of NCKU Course",
+	"icons": {
+		"48": "./icon/icon-48.png",
+		"192": "./icon/icon-192.png"
+	},
+	"content_scripts": [
+		{
+			"matches": ["*://*.course.ncku.edu.tw/*"],
+			"js": ["main.js"]
+		}
+	]
+}
