@@ -1,33 +1,42 @@
-name: Release
-
+name: "Release"
 on:
   push:
     tags:
-    - "v[0-9]+.[0-9]+"
+      - 'v*.*.*'
 
 jobs:
-  releaser:
+  sign:
+    name: "Release"
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout
-      uses: actions/checkout@v2
-    - name: Unshallow
-      run: git fetch --prune --unshallow
-    - uses: little-core-labs/get-git-tag@v3.0.1
-      id: tagName
-    - name: sign
-      uses: trmcnvn/firefox-addon@v1
-      with: 
-        uuid: '{798c9079-8199-42da-abc3-fbd181ae855c}'
-        xpi: build/NE-${{ steps.tagName.output.tag }}.xpi
-        manifest: manifest.json
-        api-key: ${{secrets.FIREFOX_API_KEY }}
-        api-secret: ${{ secrets.FIREFOX_API_SECRET }}
-    - name: Upload To Github Release
-      uses: xresloader/upload-to-github-release@v1.3.2
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      with:
-        file: "build/NE*.xpi"
-        draft: true
-        tag_name: ${{ steps.tagName.outputs.tag }}
+      - name: "Checkout"
+        uses: actions/checkout@v1
+
+      - name: ls
+        run: |
+         - ls
+         
+      - name: "web-ext build"
+        id: web-ext-build
+        uses: kewisch/action-web-ext@v1
+        with:
+          cmd: build
+          source: src
+
+      - name: "web-ext sign"
+        id: web-ext-sign
+        uses: kewisch/action-web-ext@v1
+        with:
+          cmd: sign
+          source: ${{ steps.web-ext-build.outputs.target }}
+          channel: unlisted
+          apiKey: ${{ secrets.AMO_SIGN_KEY }}
+          apiSecret: ${{ secrets.AMO_SIGN_SECRET }}
+          timeout: 900000
+
+      - name: "Create Release"
+        uses: softprops/action-gh-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          files: ${{ steps.web-ext-sign.outputs.target }}
