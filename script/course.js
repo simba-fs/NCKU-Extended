@@ -1,3 +1,6 @@
+/*
+ *	memorize the last selected item
+ */
 // if is query page
 if ((new URLSearchParams(window.location.search)).get('m') === 'en_query') {
 	const fieldPath = [
