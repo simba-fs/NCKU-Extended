@@ -3,7 +3,7 @@ name: "Release"
 on:
   push:
     branches:
-      - master  # Set a branch to deploy
+      - firefox
   pull_request:
 #on:
 #  push:
