@@ -38,7 +38,7 @@ if ((new URLSearchParams(window.location.search)).get('m') === 'en_query') {
 
 	field.forEach((i, index) => {
 		i.addEventListener('change', () => {
-			fieldValue = updateValue(field); 
+			fieldValue = updateValue(field);
 			console.log(fieldValue);
 			localStorage.setItem('fieldValue', JSON.stringify(fieldValue));
 		});
