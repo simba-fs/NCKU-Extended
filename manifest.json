@@ -7,7 +7,7 @@
 	"description": "Improving the experience of NCKU websites",
 	"browser_specific_settings": {
 		"gecko": {
-			"id": "NCKUExtended@simba-fs.dev"
+			"id": "NCKU-Extended@simba-fs.dev"
 		}
 	},
 	"icons": {
