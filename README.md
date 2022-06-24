@@ -4,9 +4,9 @@
   <img src="./icon/icon-192.png"/>
 </p>
 
-擴充成大選課系統的功能  
+擴充成大系統的功能  
 目前功能還不多，有其他想法歡迎發 Issue  
-**目前指支援 Firefox**
+**目前只支援 Firefox**
 
 ## 安裝
 到 [Release 頁面](https://github.com/simba-fs/NCKU-Extended/releases/latest)，點 `xxxx.xpi`，這時候左上角就會有一個小視窗跳出來，就可以安裝了。  
