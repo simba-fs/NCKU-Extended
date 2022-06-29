@@ -9,7 +9,7 @@
 **目前只支援 Firefox**
 
 ## 安裝
-到 [Release 頁面](https://github.com/simba-fs/NCKU-Extended/releases/latest)，點 `xxxx.xpi`，這時候左上角就會有一個小視窗跳出來，就可以安裝了。  
+到 [Release 頁面](https://github.com/simbafs/NCKU-Extended/releases/latest)，點 `xxxx.xpi`，這時候左上角就會有一個小視窗跳出來，就可以安裝了。  
 
 ## Mozilla 外掛市集
 因為上架好麻煩，目前不打算上傳了。
