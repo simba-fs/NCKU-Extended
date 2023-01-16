@@ -1,12 +1,13 @@
 /*
  * add histogram link to each course at http://eportfolio.ncku.edu.tw/index2/stu/index.php?t=ss
  */
-(() => {
+(async () => {
 	let co_nu = [...document.querySelectorAll("tr > td:nth-child(3)")];
 	let class_code = [...document.querySelectorAll("tr > td:nth-child(4)")];
+	let semester = await fetch('https://corsproxy.simba-fs.workers.dev/semester').then(res => res.json()).then(data => data.termData)
 
 	const histogram = (co_nu, class_code) => `<a
-		href="https://qrys.ncku.edu.tw/ncku/histogram.asp?syear=0110&sem=2&co_no=${co_nu}&class_code=${class_code}"
+		href="https://qrys.ncku.edu.tw/ncku/histogram.asp?syear=${semester.syear}&sem=${semester.sem}&co_no=${co_nu}&class_code=${class_code}"
 		target="_blank"
 	>
 		${co_nu}
@@ -75,7 +76,7 @@
 	// body
 	[...document.querySelectorAll("tbody > tr")]
 		.slice(0, -1)
-		.forEach((i, index) => {
+		.forEach(i => {
 			let [hasScore, score] = getScore(i);
 			let gpa = getGpa(i);
 			let creditHour = getCreditHour(i);

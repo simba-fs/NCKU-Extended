@@ -3,11 +3,11 @@
 	"author": "SimbaFs",
 	"license": "MIT",
 	"name": "NCKU Extended",
-	"version": "1.5",
+	"version": "1.6",
 	"description": "Improving the experience of NCKU websites",
 	"browser_specific_settings": {
 		"gecko": {
-			"id": "NCKU-Extended@simba-fs.dev"
+			"id": "NCKU-Extended@simbafs.cc"
 		}
 	},
 	"icons": {
@@ -23,5 +23,6 @@
 			"matches": ["*://eportfolio.ncku.edu.tw/index2/stu/index.php?t=ss"],
 			"js": ["script/eportfolio.js"]
 		}
-	]
+	],
+	"permissions": ["*://corsproxy.simba-fs.workers.dev/*"]
 }

@@ -1,0 +1,16 @@
+{
+	"name": "Extended",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"build": "web-ext build --overwrite-dest",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"web-ext": "^7.4.0"
+	}
+}
